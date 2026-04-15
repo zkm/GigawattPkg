@@ -68,3 +68,13 @@ icon_update = ""
 ## Notes
 
 Mutating operations run through sudo so you can use the tool without launching the whole process as root.
+
+## Development workflow
+
+- Pull requests to `main` are validated by CI (format, clippy, tests, release build).
+- We follow a lightweight GitHub Flow; see [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming, PR expectations, and local checks.
+
+## Releases
+
+- Releases are created from pushed tags matching `v*` (for example, `v0.1.1`).
+- The Release workflow publishes a GitHub Release with packaged Linux binaries (`gigawattpkg`, `gwpkg`) and a SHA-256 checksum file.
