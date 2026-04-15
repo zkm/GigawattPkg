@@ -1,0 +1,18 @@
+[package]
+name = "gigawattpkg"
+version.workspace = true
+edition.workspace = true
+default-run = "gigawattpkg"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+owo-colors.workspace = true
+pm-common = { path = "../pm-common" }
+pm-core = { path = "../pm-core" }
+pm-integrations = { path = "../pm-integrations" }
+serde_json.workspace = true
+
+[[bin]]
+name = "gwpkg"
+path = "src/bin/gwpkg.rs"

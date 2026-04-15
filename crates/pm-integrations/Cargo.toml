@@ -1,0 +1,9 @@
+[package]
+name = "pm-integrations"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+pm-common = { path = "../pm-common" }
+pm-core = { path = "../pm-core" }
+which.workspace = true

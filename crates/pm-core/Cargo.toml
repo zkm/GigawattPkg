@@ -1,0 +1,8 @@
+[package]
+name = "pm-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+pm-common = { path = "../pm-common" }
+serde.workspace = true
