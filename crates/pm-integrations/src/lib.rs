@@ -6,4 +6,4 @@ mod arch;
 mod fedora;
 
 pub use detect::{detect_distro, executable_exists};
-pub use router::{resolve_backend, BackendOptions};
+pub use router::{BackendOptions, resolve_backend};

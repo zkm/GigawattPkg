@@ -3,10 +3,14 @@ use clap::{Parser, Subcommand, ValueEnum};
 use owo_colors::OwoColorize;
 use pm_common::AppConfig;
 use pm_core::{BackendKind, PackageSummary, RunSummary};
-use pm_integrations::{detect_distro, resolve_backend, BackendOptions};
+use pm_integrations::{BackendOptions, detect_distro, resolve_backend};
 
 #[derive(Debug, Parser)]
-#[command(name = "gigawattpkg", version, about = "Fast colorful package manager wrapper for Arch and Fedora")]
+#[command(
+    name = "gigawattpkg",
+    version,
+    about = "Fast colorful package manager wrapper for Arch and Fedora"
+)]
 struct Cli {
     #[arg(long, value_enum)]
     backend: Option<BackendArg>,
@@ -162,7 +166,10 @@ fn render_run_summary(
         );
         println!("{}", summary.stdout);
     } else {
-        println!("{} backend={} command={}", icon, summary.backend, summary.command);
+        println!(
+            "{} backend={} command={}",
+            icon, summary.backend, summary.command
+        );
         println!("{}", summary.stdout);
     }
 
