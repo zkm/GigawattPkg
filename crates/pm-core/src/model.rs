@@ -9,7 +9,6 @@ pub enum Distro {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum BackendKind {
     Pacman,
-    Paru,
     Dnf,
 }
 

@@ -5,7 +5,6 @@ use crate::{Result, Theme};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(default)]
 pub struct AppConfig {
-    pub prefer_paru: bool,
     pub color: bool,
     pub theme: Theme,
 }
@@ -13,7 +12,6 @@ pub struct AppConfig {
 impl Default for AppConfig {
     fn default() -> Self {
         Self {
-            prefer_paru: false,
             color: true,
             theme: Theme::default(),
         }

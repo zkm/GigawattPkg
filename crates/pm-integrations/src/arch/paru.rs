@@ -1,7 +1,7 @@
 use pm_common::Result;
 use pm_core::{PackageManagerBackend, PackageSummary, RunSummary};
 
-use crate::process::run_command;
+use crate::process::{run_command, run_interactive};
 
 pub struct ParuBackend;
 
@@ -25,11 +25,11 @@ impl PackageManagerBackend for ParuBackend {
         let dynamic: Vec<&str> = packages.iter().map(String::as_str).collect();
         args.extend(dynamic);
 
-        let out = run_command("paru", &args, elevate)?;
+        let cmd = run_interactive("paru", &args, elevate)?;
         Ok(RunSummary {
             backend: self.backend_name().to_string(),
-            command: out.command_display,
-            stdout: out.stdout,
+            command: cmd,
+            stdout: String::new(),
         })
     }
 
@@ -38,20 +38,20 @@ impl PackageManagerBackend for ParuBackend {
         let dynamic: Vec<&str> = packages.iter().map(String::as_str).collect();
         args.extend(dynamic);
 
-        let out = run_command("paru", &args, elevate)?;
+        let cmd = run_interactive("paru", &args, elevate)?;
         Ok(RunSummary {
             backend: self.backend_name().to_string(),
-            command: out.command_display,
-            stdout: out.stdout,
+            command: cmd,
+            stdout: String::new(),
         })
     }
 
     fn update(&self, elevate: bool) -> Result<RunSummary> {
-        let out = run_command("paru", &["-Syu"], elevate)?;
+        let cmd = run_interactive("paru", &["-Syu"], elevate)?;
         Ok(RunSummary {
             backend: self.backend_name().to_string(),
-            command: out.command_display,
-            stdout: out.stdout,
+            command: cmd,
+            stdout: String::new(),
         })
     }
 }

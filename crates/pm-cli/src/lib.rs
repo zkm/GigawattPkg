@@ -12,9 +12,6 @@ struct Cli {
     backend: Option<BackendArg>,
 
     #[arg(long)]
-    use_paru: bool,
-
-    #[arg(long)]
     no_color: bool,
 
     #[arg(long)]
@@ -27,7 +24,6 @@ struct Cli {
 #[derive(Debug, Clone, Copy, ValueEnum)]
 enum BackendArg {
     Pacman,
-    Paru,
     Dnf,
 }
 
@@ -35,7 +31,6 @@ impl From<BackendArg> for BackendKind {
     fn from(value: BackendArg) -> Self {
         match value {
             BackendArg::Pacman => BackendKind::Pacman,
-            BackendArg::Paru => BackendKind::Paru,
             BackendArg::Dnf => BackendKind::Dnf,
         }
     }
@@ -58,7 +53,6 @@ pub fn run() -> anyhow::Result<()> {
     let backend = resolve_backend(
         distro,
         BackendOptions {
-            prefer_paru: cli.use_paru || config.prefer_paru,
             explicit_backend: cli.backend.map(Into::into),
         },
     )

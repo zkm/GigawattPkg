@@ -4,7 +4,7 @@ GigawattPkg is a fast Rust wrapper that unifies package operations on Arch Linux
 
 ## Current v0.1 scope
 
-- Arch backends: pacman by default, optional paru
+- Arch backend: pacman
 - Fedora backend: dnf
 - Commands: search, list, install, remove, update
 - Colorful output and JSON output mode
@@ -35,9 +35,8 @@ cargo run -p gigawattpkg --bin gwpkg -- search git
 ## Backend selection
 
 - Auto mode: distro detection decides backend
-- Arch defaults to pacman
-- Use paru explicitly with --use-paru
-- Override backend manually with --backend pacman|paru|dnf
+- Arch uses pacman
+- Override backend manually with `--backend pacman|dnf`
 
 ## JSON output mode
 
@@ -50,7 +49,6 @@ cargo run -p gigawattpkg -- search ripgrep --json
 Create ~/.config/gigawattpkg/config.toml:
 
 ```toml
-prefer_paru = false
 color = true
 
 [theme]
