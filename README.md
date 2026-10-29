@@ -1,5 +1,16 @@
 # GigawattPkg
 
+[![CI](https://github.com/zkm/GigawattPkg/actions/workflows/ci.yml/badge.svg)](https://github.com/zkm/GigawattPkg/actions/workflows/ci.yml)
+[![Release](https://github.com/zkm/GigawattPkg/actions/workflows/release.yml/badge.svg)](https://github.com/zkm/GigawattPkg/actions/workflows/release.yml)
+[![Latest release](https://img.shields.io/github/v/release/zkm/GigawattPkg)](https://github.com/zkm/GigawattPkg/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+![Rust 2024 edition](https://img.shields.io/badge/Rust-2024%20edition-000000?logo=rust&logoColor=white)
+![clap](https://img.shields.io/badge/clap-5A5A5A)
+![rustfmt and clippy enforced](https://img.shields.io/badge/rustfmt%20%2B%20clippy-enforced-DEA584)
+![Arch Linux pacman](https://img.shields.io/badge/Arch%20Linux-pacman-1793D1?logo=archlinux&logoColor=white)
+![Fedora dnf](https://img.shields.io/badge/Fedora-dnf-51A2DA?logo=fedora&logoColor=white)
+
 GigawattPkg is a fast Rust wrapper that unifies package operations on Arch Linux and Fedora while keeping output colorful and scriptable.
 
 ## Current v0.1 scope
